@@ -3,8 +3,6 @@
 ## Overview
 Grandma wants to store all of her family recipes, but keeps losing her old recipe book. We're brinding grandma into the digital age by building her a web app where she can keep her recipes on the web!
 
-
-
 ### Requirements
 
 Grandma isn't picky, there are only a few things she needs:
@@ -12,16 +10,16 @@ Grandma isn't picky, there are only a few things she needs:
 - [X] Allow her add new receipes (In a browser - if the page is refreshed, the saved recipes should persist)
 - [X] Allow her user edit an existing recipe (in a browser)
 - [X] Allow her to remove an existing recipe (in a browser)
-- [X] Provide an endpoint to list all saved recipes in JSON format _(We're not sure why grandma needs this one, but let's not question her)_
+- [X] Provide an endpoint to list all saved recipes in JSON format (`GET /recipes.json`)
 
 Because this is a prototype for Grandma we don't need to be concerned with using a real database (it's ok if we lose data when the app shuts down) and she isn't very picky about how the app looks.
 
 # Solution approach
 The problem was solved using a rails app. This application has 2 models: Recipes and Ingredients. Why ingredients? Because every recipe has a lot of ingredients and we don't want grandma furious.
-The frontend part was built using bootstrap framework. A basic layout was created with the view for creation, edition and listing. Delete action was added too.
+The frontend part was built using bootstrap framework. A basic layout was created with the creation, edition and listing views. Delete action was added too.
 The application uses PostgreSQL as a DB Engine and you can connect your PostgreSQL server using the credentials (check config/database.yml).
 The Recipe model has name and the recipe method itself and the Ingredient model has only name. These fields are mandatory for each model.
-A join table was created to establish the many to many relationship between Recipes and Ingredients.
+A join table was created to establish the many to many relationship between Recipes and Ingredients. This join table was indexed to speed up queries between the models.
 
 ### Considerations
 
