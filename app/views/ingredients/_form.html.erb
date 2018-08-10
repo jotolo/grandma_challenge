@@ -1,4 +1,4 @@
-<%= form_for @ingredient, :html => { :class => "form-horizontal ingredient" } do |f| %>
+<%= form_for @ingredient, :html => { :class => 'form-horizontal ingredient'} do |f| %>
 
   <% if @ingredient.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -26,7 +26,7 @@
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+      <%= link_to t('.cancel', :default => t('helpers.links.cancel')),
                 ingredients_path, :class => 'btn btn-default' %>
     </div>
   </div>

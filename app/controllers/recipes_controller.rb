@@ -15,10 +15,12 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
+    @ingredients = Ingredient.all.collect { |i| [ i.name, i.id ] }
   end
 
   # GET /recipes/1/edit
   def edit
+    @ingredients = Ingredient.all.collect { |i| [ i.name, i.id ] }
   end
 
   # POST /recipes
@@ -69,6 +71,6 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :recipe)
+      params.require(:recipe).permit(:name, :recipe, ingredient_ids: [])
     end
 end
