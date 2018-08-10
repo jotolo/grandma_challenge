@@ -36,17 +36,16 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'twitter-bootstrap-rails'
-gem 'bootstrap-select-wrapper-rails'
+gem 'twitter-bootstrap-rails', '4.0.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'factory_bot_rails'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
-  gem 'faker'
-  gem 'figaro'
+  gem 'factory_bot_rails', '4.10.0'
+  gem 'rspec-rails', '3.8.0'
+  gem 'shoulda-matchers', '3.1.2'
+  gem 'faker', '1.9.1'
+  gem 'figaro', '1.1.1'
 end
 
 group :development do
