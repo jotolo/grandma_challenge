@@ -25,21 +25,21 @@ A join table was created to establish the many to many relationship between Reci
 
 - How should the data be structured?
     The data was structured using 2 models: Recipes and Ingredients. A many to many relationship was created between them to solved the problem.
-    The nullability of some model's fields were disable to avoid inconsistency in the DB  
+    The nullability of some model's fields were disable to avoid inconsistency in the DB.
 - How would you actually store data in the app?
     The data is stored in a PostgreSQL Database with 3 main tables. One for Recipes, one for Ingredients and a last one to sotre the relationship between them.
 - How would you deploy the app?
     The application was dockerized and docker-compose support was added. 
     In order to deploy the application you can use 2 ways:
-        * Install all the dependencies and configuring everything in a server.
-        * Using the docker image
+        1- Install all the dependencies and configuring everything in a server.
+        2- Using the docker image
     My recommendation is the second option, this way you can take advantage of diverse tools which use orchestration system like Kubernetes, Docker Swarm or Cattle.
-    [Rancher Server](https://rancher.com) is a great tool to deploy this app. you just need to build the docker image and create a container on rancher using the image built by this repository
+    [Rancher Server](https://rancher.com) is a great tool to deploy this app. you just need to build the docker image and create a container on rancher using the image built by this repository.
 - What are you missing / what would you improve?
     An improvement could be split the application in backend component and frontend component.
     Backend component could be an RESTFUL API or GraphQL API with similar logic.
     Frontend component could be a Single Page Application which consumes the API and render the information for grandma.
-    Tags could be added to recipes, this way it will be easier fro grandma to find a recipe and also create a search endpoint to be consumed by the frontend app.
+    Tags could be added to recipes, this way it will be easier for grandma to find a recipe. Also, the creation of a search endpoint to be consumed by the frontend app could be a huge improvement for this app.
     
 
 ### Installation and usage
