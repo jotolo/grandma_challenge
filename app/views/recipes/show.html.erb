@@ -8,14 +8,22 @@
   <dd><%= @recipe.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:recipe) %>:</strong></dt>
   <dd><%= @recipe.recipe %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ingredients) %>:</strong></dt>
+  <dd>
+    <ul>
+      <% @recipe.ingredients.each do |i| %>
+      <li><%= i.name %></li>
+      <% end %>
+    </ul>
+  </dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
+<%= link_to t('.back', :default => t('helpers.links.back')),
               recipes_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
+<%= link_to t('.edit', :default => t('helpers.links.edit')),
               edit_recipe_path(@recipe), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+<%= link_to t('.destroy', :default => t('helpers.links.destroy')),
               recipe_path(@recipe),
               :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :data => { :confirm => t('.confirm', :default => t('helpers.links.confirm', :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
