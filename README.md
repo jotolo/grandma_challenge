@@ -40,6 +40,7 @@ A join table was created to establish the many to many relationship between Reci
     Backend component could be an RESTFUL API or GraphQL API with similar logic.
     Frontend component could be a Single Page Application which consumes the API and render the information for grandma.
     Tags could be added to recipes, this way it will be easier for grandma to find a recipe. Also, the creation of a search endpoint to be consumed by the frontend app could be a huge improvement for this app.
+    View test cases are missing because I was out of time.
     
 
 ### Installation and usage
